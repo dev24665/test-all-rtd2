@@ -1,0 +1,149 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biological interpretation of PDC protein expression data through heatmaps &mdash; PDC Documentation 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Analyze PDC Data in the Cloud" href="data_analysis_in_cloud.html" />
+    <link rel="prev" title="Data Harmonization" href="data_analysis_harmonization.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PDC Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_policies.html">Data Policies</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="data_analysis_guides.html">Data Analysis Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_harmonization.html">Data Harmonization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_harmonization.html#proteomic-data-harmonization">Proteomic Data Harmonization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_harmonization.html#common-data-types">Common Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_harmonization.html#common-data-analysis-pipeline-for-dda">Common Data Analysis Pipeline for DDA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_harmonization.html#useful-resources">Useful resources:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_harmonization.html#common-data-analysis-pipeline-for-dia">Common Data Analysis Pipeline for DIA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_harmonization.html#availability-of-results">Availability of Results</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Biological interpretation of PDC protein expression data through heatmaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hierarchical-clustering">Hierarchical clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_in_cloud.html">Analyze PDC Data in the Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_in_cloud.html#generating-a-manifest-file">Generating a manifest file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_in_cloud.html#data-handoff-to-broad-institute-firecloud">Data handoff to Broad Institute FireCloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_in_cloud.html#data-handoff-to-seven-bridges-cancer-genomic-cloud-cgc">Data handoff to Seven Bridges Cancer Genomic Cloud (CGC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_in_cloud.html#obtaining-additional-metadata-using-pdc-apis">Obtaining additional metadata using PDC APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_in_cloud.html#step-1-retrieving-the-experimental-design">Step 1: Retrieving the Experimental Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_in_cloud.html#example-output">Example Output:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_in_cloud.html#step-2-retrieving-the-case-sample-and-aliquot-identifiers-for-the-study">Step 2: Retrieving the case, sample and aliquot identifiers for the study</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_in_cloud.html#id1">Example Output:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_in_cloud.html#step-3-retrieving-the-clinical-and-biospecimen-metadata">Step 3: Retrieving the clinical and biospecimen metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_in_cloud.html#id2">Example Output:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis_in_cloud.html#perform-multiomic-correlations-on-isb-cancer-gateway-in-the-cloud">Perform multiomic correlations on ISB Cancer Gateway in the Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="technical_resources.html">Technical Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support_and_faqs.html">Support and FAQs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PDC Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="data_analysis_guides.html">Data Analysis Guides</a></li>
+      <li class="breadcrumb-item active">Biological interpretation of PDC protein expression data through heatmaps</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/data_analysis_quantitative_analysis.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="biological-interpretation-of-pdc-protein-expression-data-through-heatmaps">
+<h1>Biological interpretation of PDC protein expression data through heatmaps<a class="headerlink" href="#biological-interpretation-of-pdc-protein-expression-data-through-heatmaps" title="Link to this heading"></a></h1>
+<p>The PDC processes the submitted raw mass spectrometry data through a common data analysis pipeline (CDAP) to produce derived analysis results which can be used to identify patterns of protein and post-translational modifications (PTMs) abundance. On the PDC portal, these results can be visualized as a heatmap, useful for identifying correlated clusters of proteins (or PTMs) and/or samples.</p>
+<p>This page provides a listing of all the studies with links to heatmaps for quick access. The heatmaps can also be accessed from the individual study summary pages (e.g., PDC000120). Clicking on a heatmap link automatically loads the quantitative data and displays it through Morpheus, developed at the Broad Institute. The Mopheus site offers documentation, a tutorial, notes on configuration, and other resources.</p>
+</section>
+<section id="data">
+<h1>Data<a class="headerlink" href="#data" title="Link to this heading"></a></h1>
+<p>The source data for heatmap visualizations are organized in .gct file format. Gct is essentially a data frame or matrix where the rows correspond to genes (or proteins) and columns correspond to samples (or aliquots.) Additional row (e.g., genes accessions) and column (e.g., clinical attributes) annotations can be embedded in the input file, read by Morpheus. Please note that the proteins (i.e., isoforms) are rolled up to gene level.</p>
+<p>For label-free workflows, proteins are quantitated by spectral count and integrated precursor peak areas. For iTRAQ and TMT workflows, peptides are quantitated using the reporter ions, and the values rolled-up to the gene-level. For iTRAQ or TMT experiments each cell represents the normalized log2 ratio, where the numerator is the value for that gene/protein in that aliquot and the denominator is the expression value of whatever control channel was used in the study. Control channels are typically pooled samples from many tumor samples. All isotopic-labeling studies, including PTM studies, have log2 ratios available for visualization. In addition, whole proteome studies have unshared_log2_ratio, where data from shared peptides has been excluded.</p>
+</section>
+<section id="hierarchical-clustering">
+<h1>Hierarchical clustering<a class="headerlink" href="#hierarchical-clustering" title="Link to this heading"></a></h1>
+<p>The main purpose of heatmap visualization, in the context of the PDC, is to examine clustering of samples according to protein abundances. When a study heatmap is loaded, the data have not been clustered by either row or column. Clustering can be performed according to the method of your choice by accessing the Tools menu. You will know your data have been clustered if above the column annotations is displayed a dendogram, linking the samples. In addition, the ordering of the columns will have changed according to the clustering calculations. Morpheus allows for a large variety of data analysis methods. If you are unfamiliar with the statistical methods available in the application, you may wish to visit the Morpheus site or consult with bioinformatics colleagues.</p>
+<p>In addition to downloading publication-quality images from Morpheus, you may also export the data in .gct format for use with statistical analysis tools and packages (e.g., in R or Python.) Exports are available from the File menu. We encourage you to try the available tools available from the Morpheus menu, including those under View-&gt;Options to help you identify potential correlations between annotation variables and the protein expression data.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="data_analysis_harmonization.html" class="btn btn-neutral float-left" title="Data Harmonization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="data_analysis_in_cloud.html" class="btn btn-neutral float-right" title="Analyze PDC Data in the Cloud" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, PDC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
