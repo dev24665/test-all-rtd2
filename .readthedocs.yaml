@@ -8,9 +8,3 @@ build:
       - mkdir --parents _readthedocs/html/
       - cp --recursive pre_built_html/* _readthedocs/html/
 
-python:
-  install:
-    - requirements: requirements.txt
-
-sphinx:
-  configuration: conf.py
